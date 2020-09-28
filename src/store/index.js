@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-export function configureStore() {
+export function configureStore(initialState) {
   return createStore(
     rootReducer,
     composeWithDevTools(

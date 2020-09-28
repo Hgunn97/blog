@@ -2,9 +2,10 @@ import React from 'react'
 import * as Markdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
+import './blog.css'
 
 const BlogItem = (props) => (
-    <div className="box">
+    <div className="box blogBox">
         <article className="media">
             <div className="media-content">
                 <div className="content">
@@ -13,9 +14,9 @@ const BlogItem = (props) => (
                 </div>
                 <div className="level">
                     <div className="level-left">
-                    <Link className="level-item button is-small is-link is-outlined"
+                    <Link className="level-item button is-small is-primary"
                         to={{
-                            pathname: `/blog/${props.path}`,
+                            pathname: `/${props.link}`,
                             state: { props }
                         }}
                         >
@@ -23,12 +24,12 @@ const BlogItem = (props) => (
                         </Link>
                     </div>
                     <div className="level-right">
-                        <p className="level-item has-text-link is-size-7">
+                        <p className="level-item is-size-7 has-text-primary">
                             {moment(props.published).calendar(null, {
                             sameDay: '[Today]',
                             lastDay: '[Yesterday]',
                             lastWeek: '[Last] dddd',
-                            sameElse: 'MMM Do YYYY'
+                            sameElse: 'Do MMM YY'
                             })}
                         </p>
                     </div>

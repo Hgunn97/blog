@@ -2,24 +2,32 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import * as Markdown from 'react-markdown'
+import './blog.css'
 
 const BlogPost = ({ location: { state: { props } }}) => {
   return (
-    <>
-      <nav className="level">
-        <div className="level-left">
-          <Link className="level-item button is-small is-link is-outlined" to="/blog">Back to Blog</Link>
+    <section className="blogSection">
+      <div className="columns">
+        <div className="column">
+          <Link to="/">
+            <span>
+              <i className="fas fa-long-arrow-alt-left"></i>
+            </span>
+            <span className="ml-1">Back</span>
+          </Link>
         </div>
-        <div className="level-right">
-          <p className="level-item has-text-link is-size-7">    {moment(props.date).calendar(null, {
-  sameDay: '[Today]',
-  lastDay: '[Yesterday]',
-  lastWeek: '[Last] dddd',
-  sameElse: 'MMM Do YYYY'
-})}
+        <div className="column is-three-quarters"></div>
+        <div className="column">
+          <p className="level-item has-text-link is-size-7">
+            {moment(props.published).calendar(null, {
+              sameDay: '[Today]',
+              lastDay: '[Yesterday]',
+              lastWeek: '[Last] dddd',
+              sameElse: 'MMM Do YYYY'
+            })}
           </p>
         </div>
-      </nav>
+      </div>
       <article className="media">
         <div className="media-content">
           <div className="content">
@@ -28,7 +36,7 @@ const BlogPost = ({ location: { state: { props } }}) => {
           </div>
         </div>
       </article>
-    </>
+    </section>
   )
 }
 export default BlogPost

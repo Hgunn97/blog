@@ -1,0 +1,11 @@
+.profilePic{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+}
+.linkContainer{
+    margin-top: -1.25rem;
+}
+.myLink{
+    color: white;
+}

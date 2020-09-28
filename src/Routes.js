@@ -1,14 +1,14 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import About from './components/About/About'
 import Blog from './components/Blog/Blog'
 import BlogPost from './components/Blog/BlogPost'
-import Home from './components/Home/Home'
 
 const Routes = () => (
     <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/blog' component={Blog} />
-        <Route path='/blog/:blogPost' component={BlogPost}/>
+        <Route exact path='/' component={Blog} />
+        <Route exact path='/about' component={About} />
+        <Route path='/:blogPost' component={BlogPost}/>
     </Switch>
 )
 

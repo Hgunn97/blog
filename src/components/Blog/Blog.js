@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import BlogItem from './BlogItem'
 import { connect } from 'react-redux'
 import { Loader } from '../Loader/Loader'
+import './blog.css'
 
 class Blog extends Component {
     render() {
         return (
-            <div>
-                <p>This is the blog page</p>
+            <section className="section allPostSection">
                 { this.props.blog.loading
                     ? <Loader className="has-text-primary"></Loader>
                     : <div>
@@ -16,7 +16,7 @@ class Blog extends Component {
                         )}
                     </div>
  }
-            </div>
+            </section>
         )
     }
 }
