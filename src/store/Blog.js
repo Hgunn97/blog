@@ -1,10 +1,9 @@
 import * as contentful from 'contentful'
 import * as actions from './blog/actions'
-import * as key from './keys'
 
 const client = contentful.createClient({
-  space: key.spaceID,
-  accessToken: key.accessToken
+  space: process.env.REACT_APP_API_SPACE,
+  accessToken: process.env.REACT_APP_ACCESS_TOKEN
 })
 
 export function loadBlog() {
