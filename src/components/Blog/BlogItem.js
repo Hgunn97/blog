@@ -10,7 +10,7 @@ const BlogItem = (props) => (
             <div className="media-content">
                 <div className="content">
                     <h1>{props.title}</h1>
-                    <Markdown source={props.content.split(" ").splice(0,150).join(" ").concat('...')} />
+                    <Markdown source={props.content.split(" ").splice(0,60).join(" ").concat('...')} />
                 </div>
                 <div className="level">
                     <div className="level-left">

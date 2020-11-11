@@ -1,0 +1,21 @@
+.aboutSection{
+    margin: 0 2rem;
+    text-align: center;
+}
+
+#sanFran  {
+    float: right;    
+    margin: 0 0 10px 15px;
+}
+
+@media screen and (min-width: 800px){
+    .aboutSection{margin: 0 5rem;}
+}
+
+@media screen and (min-width: 950px){
+    .aboutSection{margin: 0 10rem;}
+}
+
+@media screen and (min-width: 1500px){
+    .aboutSection{margin: 0 20rem;}
+}

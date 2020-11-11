@@ -1,5 +1,24 @@
 .blogBox{
     margin-bottom: 3rem !important;
 }
-.blogSection{margin: 1rem 2.75rem;}
-.allPostSection{padding-top: 1rem;}
+.blogSection{
+    margin: 1.5rem 2rem;
+    padding: 0 1.5rem;
+}
+.media-content{overflow-x: hidden !important;}
+.allPostSection{margin: 0 2rem;}
+
+@media screen and (min-width: 800px){
+    .blogSection{margin: 1.5rem 5rem;}
+    .allPostSection{margin: 0 5rem;}
+}
+
+@media screen and (min-width: 950px){
+    .blogSection{margin: 1.5rem 10rem;}
+    .allPostSection{margin: 0 10rem;}
+}
+
+@media screen and (min-width: 1500px){
+    .blogSection{margin: 1.5rem 20rem;}
+    .allPostSection{margin: 0 20rem;}
+}

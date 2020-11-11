@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import * as Markdown from 'react-markdown'
 import './blog.css'
+import hljs from 'highlight.js'
+import "highlight.js/styles/rainbow.css"
 
 const BlogPost = ({ location: { state: { props } }}) => {
+  useEffect(() => {
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    console.log("Done the use effect")
+  })
   return (
     <section className="blogSection">
-      <div className="columns">
+      <div className="columns is-mobile">
         <div className="column">
           <Link to="/">
             <span>
