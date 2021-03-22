@@ -5,6 +5,14 @@
     margin: 1.5rem 2rem;
     padding: 0 1.5rem;
 }
+p img {
+    display: block;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 50%;
+}
 .media-content{overflow-x: hidden !important;}
 .allPostSection{margin: 0 2rem;}
 
