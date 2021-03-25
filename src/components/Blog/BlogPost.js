@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import * as Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './blog.css';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/rainbow.css';
 import { BlogContext } from '../../context/context';
 
 const BlogPost = () => {
@@ -19,10 +19,16 @@ const BlogPost = () => {
       blogItems.items.map((item) => {
         if (item.fields.link === currentLink) setCurrentItem(item.fields), setLoading(false);
       });
-      hljs.initHighlighting.called = false;
-      hljs.initHighlighting();
     }
   });
+
+  const highlight = ({ value, language }) => {
+    return (
+      <SyntaxHighlighter language={language} style={okaidia}>
+        {value}
+      </SyntaxHighlighter>
+    );
+  };
 
   return (
     <section className="blogSection">
@@ -55,7 +61,7 @@ const BlogPost = () => {
             <div className="media-content">
               <div className="content">
                 <h1></h1>
-                <Markdown source={currentItem.content} />
+                <ReactMarkdown source={currentItem.content} renderers={{ code: highlight }} />
               </div>
             </div>
           </article>
