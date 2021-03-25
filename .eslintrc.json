@@ -20,6 +20,7 @@
     ],
     "rules": {
         "no-unused-vars": "warn",
-        "react/no-unescaped-entities": 0
+        "react/no-unescaped-entities": 0,
+        "react/prop-types": "off"
     }
 }
