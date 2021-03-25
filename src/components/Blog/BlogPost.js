@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import moment from 'moment'
-import * as Markdown from 'react-markdown'
-import './blog.css'
-import hljs from 'highlight.js'
-import "highlight.js/styles/rainbow.css"
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import * as Markdown from 'react-markdown';
+import './blog.css';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/rainbow.css';
 
-const BlogPost = ({ location: { state: { props } }}) => {
+const BlogPost = () => {
   useEffect(() => {
     hljs.initHighlighting.called = false;
     hljs.initHighlighting();
-    console.log("Done the use effect")
-  })
+    console.log('Done the use effect');
+  });
   return (
     <section className="blogSection">
       <div className="columns is-mobile">
@@ -26,24 +26,24 @@ const BlogPost = ({ location: { state: { props } }}) => {
         <div className="column is-three-quarters"></div>
         <div className="column">
           <p className="level-item has-text-link is-size-7">
-            {moment(props.published).calendar(null, {
-              sameDay: '[Today]',
-              lastDay: '[Yesterday]',
-              lastWeek: '[Last] dddd',
-              sameElse: 'MMM Do YYYY'
-            })}
+            {/*{moment(props.published).calendar(null, {*/}
+            {/*  sameDay: '[Today]',*/}
+            {/*  lastDay: '[Yesterday]',*/}
+            {/*  lastWeek: '[Last] dddd',*/}
+            {/*  sameElse: 'MMM Do YYYY'*/}
+            {/*})}*/}
           </p>
         </div>
       </div>
       <article className="media">
         <div className="media-content">
           <div className="content">
-            <h1>{props.title}</h1>
-            <Markdown source={props.content} />
+            <h1></h1>
+            {/*<Markdown source={props.content} />*/}
           </div>
         </div>
       </article>
     </section>
-  )
-}
-export default BlogPost
+  );
+};
+export default BlogPost;
