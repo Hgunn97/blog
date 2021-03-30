@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import * as Markdown from 'react-markdown';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 import './blog.css';
 
 const BlogItem = (props) => {
@@ -26,12 +26,7 @@ const BlogItem = (props) => {
             </div>
             <div className="level-right">
               <p className="level-item is-size-7 has-text-primary">
-                {moment(props.published).calendar(null, {
-                  sameDay: '[Today]',
-                  lastDay: '[Yesterday]',
-                  lastWeek: '[Last] dddd',
-                  sameElse: 'Do MMM YY'
-                })}
+                {DateTime.fromISO(props.published).toLocaleString(DateTime.DATE_MED)}
               </p>
             </div>
           </div>

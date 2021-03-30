@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './blog.css';
 import { BlogContext } from '../../context/context';
+import { DateTime } from 'luxon';
 
 const BlogPost = () => {
   const blogItems = useContext(BlogContext);
@@ -48,12 +48,7 @@ const BlogPost = () => {
             <div className="column is-three-quarters"></div>
             <div className="column">
               <p className="level-item has-text-link is-size-7">
-                {moment(currentItem.published).calendar(null, {
-                  sameDay: '[Today]',
-                  lastDay: '[Yesterday]',
-                  lastWeek: '[Last] dddd',
-                  sameElse: 'MMM Do YYYY'
-                })}
+                {DateTime.fromISO(currentItem.published).toLocaleString(DateTime.DATE_MED)}
               </p>
             </div>
           </div>
