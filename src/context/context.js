@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect } from 'react';
 import Client from '../contentful';
 import PropTypes from 'prop-types';
 

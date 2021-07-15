@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Markdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { DateTime } from 'luxon';
-import './blog.css';
+import './blog.styles.scss';
 
 const BlogItem = (props) => {
   return (
