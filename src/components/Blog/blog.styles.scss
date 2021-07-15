@@ -1,0 +1,22 @@
+.allPostSection{
+    margin: 0 2rem;
+
+    .blogBox{
+        margin-bottom: 3rem !important;
+    }
+    .media-content{
+        overflow-x: hidden !important;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .allPostSection{margin: 0 5rem;}
+}
+
+@media screen and (min-width: 950px){
+    .allPostSection{margin: 0 10rem;}
+}
+
+@media screen and (min-width: 1500px){
+    .allPostSection{margin: 0 20rem;}
+}

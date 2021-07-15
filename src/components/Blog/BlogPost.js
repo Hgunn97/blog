@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import './blog.css';
+import './blogPost.styles.scss';
 import { BlogContext } from '../../context/context';
 import { DateTime } from 'luxon';
 

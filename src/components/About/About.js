@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './about.styles.scss';
 import SanFran from '../../images/SanFran.JPG';
 
 function About() {

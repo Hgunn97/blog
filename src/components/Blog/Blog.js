@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { BlogContext } from '../../context/context';
 import BlogItem from './BlogItem';
-import './blog.css';
+import './blog.styles.scss';
 
 const Blog = () => {
   const blogItems = useContext(BlogContext);
