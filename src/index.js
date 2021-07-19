@@ -5,6 +5,13 @@ import { BlogProvider } from './context/context';
 import App from './components/App/App.js';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-TZ2NNX7'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 ReactDOM.render(
   <BlogProvider>

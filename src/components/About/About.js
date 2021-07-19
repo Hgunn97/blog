@@ -1,8 +1,19 @@
 import React from 'react';
 import './about.styles.scss';
 import SanFran from '../../images/SanFran.JPG';
+import TagManager from "react-gtm-module";
 
 function About() {
+  const tagManagerArgs = {
+    dataLayer: {
+      event: 'virtualPageView',
+      pageURL: window.location.href || null,
+      pageName: 'About',
+    }
+  }
+
+  TagManager.dataLayer(tagManagerArgs)
+
   return (
     <section className="section aboutSection">
       <h1 className="title is-5">Hi, I'm Hannah</h1>

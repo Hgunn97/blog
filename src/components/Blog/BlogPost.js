@@ -6,6 +6,7 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './blogPost.styles.scss';
 import { BlogContext } from '../../context/context';
 import { DateTime } from 'luxon';
+import TagManager from 'react-gtm-module'
 
 const BlogPost = () => {
   const blogItems = useContext(BlogContext);
@@ -17,10 +18,26 @@ const BlogPost = () => {
     if (!blogItems.items) setLoading(true);
     else {
       blogItems.items.map((item) => {
-        if (item.fields.link === currentLink) setCurrentItem(item.fields), setLoading(false);
+        if (item.fields.link === currentLink) {
+          setCurrentItem(item.fields)
+          setLoading(false);
+          const tagManagerArgs = {
+            dataLayer: {
+              event: 'virtualPageView',
+              pageURL: window.location.href,
+              pageName: item.fields.title,
+            }
+          }
+          TagManager.dataLayer(tagManagerArgs)
+          console.log("I have fired analytics from the blog post page")
+        }
       });
     }
-  });
+  },[blogItems]);
+
+
+
+
 
   const highlight = ({ value, language }) => {
     return (
