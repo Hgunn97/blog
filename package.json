@@ -6,7 +6,7 @@
     "contentful": "^8.2.0",
     "highlight.js": "^10.3.2",
     "install": "^0.13.0",
-    "luxon": "^1.26.0",
+    "luxon": "^1.28.1",
     "node-sass": "^6.0.1",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
